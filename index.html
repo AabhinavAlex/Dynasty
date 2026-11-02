@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodBridge Kerala — Every plate has a story</title>
+  <meta name="description" content="FoodBridge turns Kerala's surplus food into someone's next meal. Join 340+ donors across all 14 districts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Malayalam:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="currentColor" opacity="0.12"/>
+            <path d="M7 14.5c1.2 2 3.2 3.5 5 3.5s3.8-1.5 5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="9" cy="10" r="1" fill="currentColor"/>
+            <circle cx="15" cy="10" r="1" fill="currentColor"/>
+            <path d="M12 2v2.5M6.5 4.5l1.5 1.5M17.5 4.5l-1.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo-wordmark">FoodBridge <em>Kerala</em></span>
+      </a>
+
+      <button class="hamburger" id="navToggle" aria-label="Menu">
+        <svg width="22" height="22" viewBox="0 0 22 22"><line x1="2" y1="6" x2="20" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="11" x2="20" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="16" x2="20" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#rescue" class="nav-link">How It Works</a></li>
+        <li><a href="#tonights" class="nav-link">Tonight's Need</a></li>
+        <li><a href="#voices" class="nav-link">Stories</a></li>
+        <li><a href="#impact" class="nav-link">Impact</a></li>
+        <li><a href="#donate" class="nav-link">Donate</a></li>
+        <li><a href="#auth" class="btn-nav magnetic" id="loginBtn">Join us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+
+    <!-- Ticker tape at very top -->
+    <div class="ticker-bar">
+      <div class="ticker-track">
+        <span>🍛 22 kg biriyani · Hotel Sarovaram, Thrissur · Available now</span>
+        <span>🌿 Onam Sadhya · MG Road Halls, Kochi · 40+ portions</span>
+        <span>🍞 Chapathi &amp; curry · CUSAT Canteen · 8 kg</span>
+        <span>🎉 Wedding surplus · Palakkad · 60 kg · Pickup needed</span>
+        <span>🏠 Family function · Kozhikode · 15 portions</span>
+        <span>🍛 22 kg biriyani · Hotel Sarovaram, Thrissur · Available now</span>
+        <span>🌿 Onam Sadhya · MG Road Halls, Kochi · 40+ portions</span>
+        <span>🍞 Chapathi &amp; curry · CUSAT Canteen · 8 kg</span>
+      </div>
+    </div>
+
+    <div class="hero-layout">
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <p class="hero-eyebrow reveal-up">Kerala's food rescue network</p>
+        <h1 class="hero-h1 reveal-up delay-1">
+          Every plate<br/>has a story.<br/>
+          <em>Write the next<br/>chapter.</em>
+        </h1>
+        <p class="hero-body reveal-up delay-2">
+          In Kerala, generosity always over-prepares. We turn what's left on the table into the meal someone needed tonight.
+        </p>
+        <p class="hero-ml reveal-up delay-2">
+          ഓരോ ഭക്ഷണത്തിനും ഒരു കഥയുണ്ട്.
+        </p>
+        <div class="hero-btns reveal-up delay-3">
+          <a href="#donate" class="btn-primary magnetic">Share Surplus Food</a>
+          <a href="#rescue" class="btn-text">See how it works ↓</a>
+        </div>
+
+        <!-- Floating live stats -->
+        <div class="hero-live-pill reveal-up delay-4">
+          <span class="live-dot"></span>
+          <span><strong id="liveCount">12</strong> donations active across Kerala right now</span>
+        </div>
+      </div>
+
+      <!-- Right: Photo collage -->
+      <div class="hero-collage reveal-right delay-2">
+        <div class="collage-main">
+          <img
+            src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=700&q=80&fit=crop&crop=center"
+            alt="Community food distribution"
+            loading="eager"
+            onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#7aab8a)';this.removeAttribute('src')"
+          />
+          <div class="collage-label">Volunteers distributing food · Thrissur</div>
+        </div>
+
+        <div class="collage-side">
+          <div class="collage-sm collage-sm-top">
+            <img
+              src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80&fit=crop&crop=center"
+              alt="Kerala traditional food"
+              onerror="this.style.background='linear-gradient(135deg,#c4a882,#8b6f47)';this.removeAttribute('src')"
+            />
+            <div class="collage-label">Sadhya, Kochi</div>
+          </div>
+          <div class="collage-sm collage-sm-bot">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80&fit=crop&crop=center"
+              alt="Surplus food ready"
+              onerror="this.style.background='linear-gradient(135deg,#2d5a3d,#c9963b)';this.removeAttribute('src')"
+            />
+            <div class="collage-label">Hotel surplus · Kozhikode</div>
+          </div>
+        </div>
+
+        <!-- Floating card -->
+        <div class="hero-float-card">
+          <div class="hfc-row">
+            <span class="hfc-icon">🍛</span>
+            <div>
+              <strong>Pickup confirmed</strong>
+              <p>Snehatheeram NGO · En route to Thrissur</p>
+            </div>
+          </div>
+          <div class="hfc-bar">
+            <div class="hfc-bar-fill"></div>
+          </div>
+          <span class="hfc-tag">8 min since listing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE PROBLEM (NEW IDEA) ===================== -->
+  <section class="waste-band">
+    <div class="wb-inner">
+      <div class="wb-stat reveal-up">
+        <strong>40%</strong>
+        <span>of food cooked in Kerala goes uneaten</span>
+      </div>
+      <div class="wb-divider"></div>
+      <div class="wb-stat reveal-up delay-1">
+        <strong>27 lakh</strong>
+        <span>people face food insecurity in the state</span>
+      </div>
+      <div class="wb-divider"></div>
+      <div class="wb-stat reveal-up delay-2">
+        <strong>0 km</strong>
+        <span>between your surplus and someone's hunger</span>
+      </div>
+      <div class="wb-divider"></div>
+      <div class="wb-quote reveal-up delay-3">
+        <em>"The food exists. The need exists. We are simply the bridge."</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW RESCUE WORKS (NEW IDEA: Timeline style) ===================== -->
+  <section class="rescue-section section-pad" id="rescue">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">The rescue flow</p>
+        <h2 class="section-title">From kitchen to<br/>a warm meal — in under an hour.</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-track"></div>
+
+        <div class="timeline-step reveal-up delay-1">
+          <div class="ts-time">T + 0 min</div>
+          <div class="ts-dot"></div>
+          <div class="ts-card">
+            <div class="ts-icon">📸</div>
+            <h3>You post the surplus</h3>
+            <p>Take a quick photo, mention quantity and your address. Done in 60 seconds from any phone.</p>
+            <div class="ts-example">
+              <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&q=70&fit=crop" alt="Food ready for donation" onerror="this.parentElement.style.display='none'" />
+              <span>Post · Kozhikode Wedding Hall</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal-up delay-2">
+          <div class="ts-time">T + 5 min</div>
+          <div class="ts-dot ts-dot-gold"></div>
+          <div class="ts-card">
+            <div class="ts-icon">🔔</div>
+            <h3>Nearest partner gets alerted</h3>
+            <p>Our system pings the 3 closest verified NGOs and community kitchens. First to confirm gets it.</p>
+            <div class="ts-badge">
+              <span class="ts-badge-dot"></span>
+              Snehatheeram NGO confirmed in 6 min
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal-up delay-3">
+          <div class="ts-time">T + 25 min</div>
+          <div class="ts-dot"></div>
+          <div class="ts-card">
+            <div class="ts-icon">🚗</div>
+            <h3>Volunteer picks up</h3>
+            <p>A verified volunteer arrives at your address. You hand over the food. No paperwork, no formality.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step reveal-up delay-4">
+          <div class="ts-time">T + 55 min</div>
+          <div class="ts-dot ts-dot-gold"></div>
+          <div class="ts-card">
+            <div class="ts-icon">🙏</div>
+            <h3>Families eat. You get proof.</h3>
+            <p>You receive a WhatsApp confirmation with a photo of who received your food. The loop closes with gratitude.</p>
+            <div class="ts-example">
+              <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=300&q=70&fit=crop" alt="Community meal" onerror="this.parentElement.style.display='none'" />
+              <span>65 people fed · Thrissur shelter home</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TONIGHT'S NEED (BRAND NEW IDEA) ===================== -->
+  <section class="tonights-section section-pad" id="tonights">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Urgent · Updated daily</p>
+        <h2 class="section-title">Tonight's need<br/>across Kerala.</h2>
+        <p class="tonight-sub">These communities need food donations by 8 PM today. <em>Sample data — for demonstration.</em></p>
+      </div>
+
+      <div class="need-grid">
+        <div class="need-card need-urgent reveal-up delay-1">
+          <div class="need-badge">🔴 Urgent</div>
+          <div class="need-org">Helping Hands Shelter</div>
+          <div class="need-location">Vyttila, Ernakulam</div>
+          <div class="need-detail">
+            <span>🍽 80 meals needed</span>
+            <span>🕗 By 7:30 PM</span>
+            <span>🌿 Veg preferred</span>
+          </div>
+          <div class="need-families">Serving 28 families tonight</div>
+          <button class="btn-primary magnetic need-btn">I Can Help →</button>
+        </div>
+
+        <div class="need-card reveal-up delay-2">
+          <div class="need-badge need-badge-mod">🟡 Moderate</div>
+          <div class="need-org">St. Francis Night Kitchen</div>
+          <div class="need-location">Thrissur Town</div>
+          <div class="need-detail">
+            <span>🍽 35 meals needed</span>
+            <span>🕗 By 8 PM</span>
+            <span>🍗 Any food type</span>
+          </div>
+          <div class="need-families">Serving 12 families tonight</div>
+          <button class="btn-outline magnetic need-btn">I Can Help →</button>
+        </div>
+
+        <div class="need-card reveal-up delay-3">
+          <div class="need-badge need-badge-mod">🟡 Moderate</div>
+          <div class="need-org">Karuna Kitchen</div>
+          <div class="need-location">Calicut Beach Road, Kozhikode</div>
+          <div class="need-detail">
+            <span>🍽 50 meals needed</span>
+            <span>🕗 By 8 PM</span>
+            <span>🌿 Veg or non-veg</span>
+          </div>
+          <div class="need-families">Serving daily labourers</div>
+          <button class="btn-outline magnetic need-btn">I Can Help →</button>
+        </div>
+
+        <div class="need-card need-partial reveal-up delay-4">
+          <div class="need-badge need-badge-ok">🟢 Almost covered</div>
+          <div class="need-org">Annadanam Centre</div>
+          <div class="need-location">Kottayam Junction</div>
+          <div class="need-detail">
+            <span>🍽 15 meals still needed</span>
+            <span>🕗 By 7 PM</span>
+            <span>🍗 Any food type</span>
+          </div>
+          <div class="need-progress-bar">
+            <div class="need-progress-fill" style="width:78%"></div>
+          </div>
+          <div class="need-families">78% covered · almost there!</div>
+          <button class="btn-outline magnetic need-btn">Fill the gap →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESCUE SCORE (NEW GAMIFICATION IDEA) ===================== -->
+  <section class="score-section section-pad">
+    <div class="container">
+      <div class="score-grid">
+        <div class="score-text reveal-left">
+          <p class="section-tag">Your impact, tracked</p>
+          <h2 class="section-title">The Rescue<br/>Score.</h2>
+          <p class="score-desc">Every donation earns you a Rescue Score — a living record of meals saved, CO₂ reduced and families helped. Kerala's top rescuers are celebrated in our monthly Honour Wall.</p>
+          <div class="score-perks">
+            <div class="perk">
+              <span class="perk-icon">🌾</span>
+              <div>
+                <strong>Seed Badge</strong>
+                <p>First 5 donations</p>
+              </div>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🌿</span>
+              <div>
+                <strong>Root Badge</strong>
+                <p>25 donations · 200+ meals</p>
+              </div>
+            </div>
+            <div class="perk">
+              <span class="perk-icon">🌳</span>
+              <div>
+                <strong>Banyan Badge</strong>
+                <p>100 donations · 1000+ meals</p>
+              </div>
+            </div>
+          </div>
+          <a href="#auth" class="btn-primary magnetic">Start earning your score</a>
+        </div>
+
+        <div class="score-visual reveal-right">
+          <div class="score-card">
+            <div class="sc-header">
+              <div class="sc-avatar">R</div>
+              <div>
+                <strong>Rajan Menon</strong>
+                <span>Thrissur · Joined Nov 2024</span>
+              </div>
+              <div class="sc-badge-icon">🌳</div>
+            </div>
+            <div class="sc-score-num"><span class="counter" data-target="847">0</span></div>
+            <div class="sc-score-label">Rescue Score</div>
+            <div class="sc-stats">
+              <div class="sc-stat">
+                <strong>1,240</strong>
+                <span>Meals saved</span>
+              </div>
+              <div class="sc-stat">
+                <strong>62 kg</strong>
+                <span>CO₂ avoided</span>
+              </div>
+              <div class="sc-stat">
+                <strong>18</strong>
+                <span>Donations</span>
+              </div>
+            </div>
+            <div class="sc-bar-label">Progress to Banyan 🌳</div>
+            <div class="sc-bar">
+              <div class="sc-bar-fill impact-bar-fill" style="--fill: 65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VOICES / STORIES WITH REAL PHOTOS ===================== -->
+  <section class="voices-section section-pad" id="voices">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Real people · Real stories</p>
+        <h2 class="section-title">What one plate<br/>can mean.</h2>
+      </div>
+
+      <!-- MAIN FEATURED STORY -->
+      <div class="story-feature reveal-up delay-1">
+        <div class="sf-photo">
+          <img
+            src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800&q=80&fit=crop&crop=faces,center"
+            alt="Community volunteer Kerala"
+            onerror="this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80&fit=crop'"
+          />
+          <div class="sf-photo-caption">
+            Volunteers at a food distribution drive, Ernakulam — <em>sample illustration</em>
+          </div>
+        </div>
+        <div class="sf-content">
+          <div class="sf-quote-mark">"</div>
+          <blockquote class="sf-quote">
+            After our daughter's wedding reception in Thrissur, we had enough food to feed two hundred more guests. Instead of watching it go to waste, we opened the FoodBridge app. Within forty minutes, three shelters had confirmed pickup. It felt like the wedding wasn't over — it had found its real ending.
+          </blockquote>
+          <div class="sf-author">
+            <div class="sf-avatar sf-av-green">R</div>
+            <div>
+              <strong>Rajan Menon</strong>
+              <span>Wedding host · Thrissur</span>
+            </div>
+            <div class="sf-impact">85 kg · 3 shelters · 1 night</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEW CARDS GRID — with photos -->
+      <div class="reviews-grid">
+
+        <div class="review-card reveal-up delay-1">
+          <div class="rc-photo">
+            <img
+              src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80&fit=crop&crop=faces"
+              alt="Fathima Beevi hotel owner"
+              onerror="this.style.background='linear-gradient(135deg,#c4a882,#8b6f47)';this.removeAttribute('src')"
+            />
+          </div>
+          <div class="rc-body">
+            <div class="rc-stars">★★★★★</div>
+            <p class="rc-quote-ml">
+              "ഞങ്ങളുടെ ഹോട്ടലിൽ ദിവസവും ഭക്ഷണം ബാക്കി വരുമായിരുന്നു. FoodBridge-ലൂടെ ഇപ്പോൾ ആ ഭക്ഷണം ആവശ്യക്കാരിലേക്ക് എത്തുന്നു."
+            </p>
+            <p class="rc-translation">"Daily surplus from our hotel now reaches those who need it."</p>
+            <div class="rc-author">
+              <strong>Fathima Beevi</strong>
+              <span>Hotel owner · Kozhikode · 22 kg/day</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal-up delay-2">
+          <div class="rc-photo">
+            <img
+              src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80&fit=crop&crop=faces"
+              alt="Sister Agnes Thomas"
+              onerror="this.style.background='linear-gradient(135deg,#2d5a3d,#c9963b)';this.removeAttribute('src')"
+            />
+          </div>
+          <div class="rc-body">
+            <div class="rc-stars">★★★★★</div>
+            <p class="rc-quote">
+              "Before FoodBridge, our community kitchen in Ernakulam struggled on peak days. Now we plan confidently. The families we serve get fresher, warmer meals — and we've never had to say 'not enough tonight'."
+            </p>
+            <div class="rc-author">
+              <strong>Sr. Agnes Thomas</strong>
+              <span>Community kitchen · Ernakulam · 140 families</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal-up delay-3">
+          <div class="rc-photo">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&fit=crop&crop=faces"
+              alt="Arun Kumar college volunteer"
+              onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#7aab8a)';this.removeAttribute('src')"
+            />
+          </div>
+          <div class="rc-body">
+            <div class="rc-stars">★★★★★</div>
+            <p class="rc-quote">
+              "Our CUSAT college festival always generated huge amounts of leftover food. We used to feel guilty. FoodBridge turned that guilt into action — and we now do it after every event, automatically."
+            </p>
+            <div class="rc-author">
+              <strong>Arun Kumar</strong>
+              <span>Student volunteer · CUSAT, Kalamassery · 8 events</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal-up delay-4">
+          <div class="rc-photo">
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80&fit=crop&crop=faces"
+              alt="Deepa Nair family donor"
+              onerror="this.style.background='linear-gradient(135deg,#8b6f47,#c4a882)';this.removeAttribute('src')"
+            />
+          </div>
+          <div class="rc-body">
+            <div class="rc-stars">★★★★★</div>
+            <p class="rc-quote">
+              "My mother always said — never let food go to waste in a Kerala home. After our Onam celebration I posted on FoodBridge. A volunteer arrived in 20 minutes. My mother would have approved."
+            </p>
+            <div class="rc-author">
+              <strong>Deepa Nair</strong>
+              <span>Home donor · Kottayam · Onam celebration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card review-card-wide reveal-up delay-2">
+          <div class="rc-photo rc-photo-wide">
+            <img
+              src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80&fit=crop&crop=center"
+              alt="Food distribution community"
+              onerror="this.style.background='linear-gradient(135deg,#1a3a2a,#7aab8a)';this.removeAttribute('src')"
+            />
+          </div>
+          <div class="rc-body">
+            <div class="rc-stars">★★★★★</div>
+            <p class="rc-quote">
+              "As a Muslim, giving food — Sadaqah — is an act of worship. FoodBridge made it easy for our entire mahallu to donate after Eid gatherings. Now four NGOs in Malappuram rely on our community every Eid. This is what community really means."
+            </p>
+            <div class="rc-author">
+              <strong>Mohammed Aslam</strong>
+              <span>Mahallu committee president · Malappuram · 4 Eid donations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal-up delay-3">
+          <div class="rc-photo">
+            <img
+              src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&q=80&fit=crop&crop=faces"
+              alt="Thomas restaurant owner Kochi"
+              onerror="this.style.background='linear-gradient(135deg,#c4a882,#8b6f47)';this.removeAttribute('src')"
+            />
+          </div>
+          <div class="rc-body">
+            <div class="rc-stars">★★★★★</div>
+            <p class="rc-quote">
+              "Running a restaurant near Marine Drive, Kochi, we always had excess at closing. FoodBridge gave us a daily routine. Our staff takes pride in it now — it's become part of our identity."
+            </p>
+            <div class="rc-author">
+              <strong>Thomas Varghese</strong>
+              <span>Restaurant owner · Marine Drive, Kochi · Daily donor</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IMPACT ===================== -->
+  <section class="impact-section section-pad" id="impact">
+    <div class="impact-bg-art"></div>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">The numbers behind the work</p>
+        <h2 class="section-title">Small acts.<br/>Collective weight.</h2>
+      </div>
+
+      <div class="impact-mosaic">
+        <div class="im-card im-card-hero reveal-up delay-1">
+          <div class="im-num"><span class="counter" data-target="12400">0</span>+</div>
+          <div class="im-label">Warm meals delivered</div>
+          <div class="im-note">Ernakulam · Thrissur · Kozhikode · Kannur</div>
+          <div class="im-bar"><div class="im-bar-fill impact-bar-fill" style="--fill:84%"></div></div>
+          <div class="im-photo">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80&fit=crop" alt="Meals delivered" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a3a2a 0%,#7aab8a 100%)';this.remove()" />
+          </div>
+        </div>
+
+        <div class="im-card reveal-up delay-2">
+          <div class="im-num"><span class="counter" data-target="2100">0</span> kg</div>
+          <div class="im-label">Food rescued this month</div>
+          <div class="im-note">= 7,000 plates of rice</div>
+        </div>
+
+        <div class="im-card reveal-up delay-3">
+          <div class="im-num"><span class="counter" data-target="340">0</span></div>
+          <div class="im-label">Active donors</div>
+          <div class="im-note">Hotels · Families · Institutions</div>
+        </div>
+
+        <div class="im-card im-card-dark reveal-up delay-2">
+          <div class="im-icon">🌍</div>
+          <div class="im-num"><span class="counter" data-target="4200">0</span> kg</div>
+          <div class="im-label">CO₂ emissions avoided</div>
+          <div class="im-note">Food waste = major greenhouse gas source</div>
+        </div>
+
+        <div class="im-card reveal-up delay-3">
+          <div class="im-num">&lt; <span class="counter" data-target="45">0</span> min</div>
+          <div class="im-label">Average pickup time</div>
+          <div class="im-note">From listing to collection</div>
+        </div>
+
+        <div class="im-card im-card-gold reveal-up delay-4">
+          <div class="im-num"><span class="counter" data-target="58">0</span></div>
+          <div class="im-label">NGO &amp; community partners</div>
+          <div class="im-note">Verified · Across all 14 districts</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DONATE FORM ===================== -->
+  <section class="donate-section section-pad" id="donate">
+    <div class="container">
+      <div class="donate-layout">
+        <div class="donate-left reveal-left">
+          <p class="section-tag">Ready to help?</p>
+          <h2 class="section-title">Post your<br/>surplus now.</h2>
+          <p class="donate-body">Takes 60 seconds. No app needed. A real person from a verified NGO will contact you within 10 minutes.</p>
+
+          <div class="donate-reassure">
+            <div class="dr-item">
+              <span>⚡</span>
+              <span>Partner notified within 5 minutes</span>
+            </div>
+            <div class="dr-item">
+              <span>📸</span>
+              <span>Confirmation photo sent to you</span>
+            </div>
+            <div class="dr-item">
+              <span>🌿</span>
+              <span>CO₂ certificate for your record</span>
+            </div>
+            <div class="dr-item">
+              <span>🔒</span>
+              <span>Your address shared only with the pickup volunteer</span>
+            </div>
+          </div>
+
+          <!-- Donation photo collage on left -->
+          <div class="donate-photos">
+            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=300&q=70&fit=crop" alt="Food ready" onerror="this.parentElement.style.display='none'" />
+            <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=300&q=70&fit=crop" alt="Distribution" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <div class="donate-right reveal-right">
+          <form class="donate-form" id="donateForm" novalidate>
+            <h3 class="form-title">Share your surplus</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="donorName">Your name *</label>
+                <input type="text" id="donorName" placeholder="e.g. Suresh Pillai" required />
+              </div>
+              <div class="form-group">
+                <label for="donorPhone">Phone *</label>
+                <input type="tel" id="donorPhone" placeholder="+91 94470 00000" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="foodType">What food? *</label>
+              <select id="foodType" required>
+                <option value="">Choose type</option>
+                <option value="sadhya">Sadhya / Kerala traditional meal</option>
+                <option value="biriyani">Biriyani / Rice dishes</option>
+                <option value="chapathi">Chapathi / Bread</option>
+                <option value="curry">Curries &amp; side dishes</option>
+                <option value="sweets">Sweets / Payasam / Halwa</option>
+                <option value="snacks">Snacks / Baked items</option>
+                <option value="mixed">Mixed / Multiple types</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="quantity">How much? *</label>
+                <input type="text" id="quantity" placeholder="e.g. 15 kg or 50 portions" required />
+              </div>
+              <div class="form-group">
+                <label for="dietType">Diet type</label>
+                <select id="dietType">
+                  <option value="veg">Pure Vegetarian</option>
+                  <option value="nonveg">Non-vegetarian</option>
+                  <option value="mixed">Mixed</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="pickupAddress">Pickup address *</label>
+              <input type="text" id="pickupAddress" placeholder="Building / Street / Area, District" required />
+            </div>
+
+            <div class="form-group">
+              <label for="pickupTime">Available until *</label>
+              <input type="time" id="pickupTime" required />
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" rows="2" placeholder="Allergens, packaging, parking instructions…"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full magnetic">Post Donation Now</button>
+            <p class="form-note">Your address is only shared with the confirmed pickup volunteer. <a href="#">Food safety guidelines →</a></p>
+          </form>
+
+          <div class="form-success" id="formSuccess" hidden>
+            <div class="fs-icon">✓</div>
+            <h3>Your listing is live!</h3>
+            <p>Partners near you are being notified. Expect a call within 10 minutes.</p>
+            <button class="btn-outline" id="newDonation">Post another</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DISTRICT MAP BAND ===================== -->
+  <section class="district-band section-pad">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-tag">Where we work</p>
+        <h2 class="section-title">Active across<br/>all of Kerala.</h2>
+      </div>
+      <div class="district-grid">
+        <div class="district-pill reveal-up delay-1"><span class="dp-dot dp-active"></span>Ernakulam</div>
+        <div class="district-pill reveal-up delay-1"><span class="dp-dot dp-active"></span>Thrissur</div>
+        <div class="district-pill reveal-up delay-2"><span class="dp-dot dp-active"></span>Kozhikode</div>
+        <div class="district-pill reveal-up delay-2"><span class="dp-dot dp-active"></span>Kannur</div>
+        <div class="district-pill reveal-up delay-3"><span class="dp-dot dp-active"></span>Kottayam</div>
+        <div class="district-pill reveal-up delay-3"><span class="dp-dot dp-active"></span>Palakkad</div>
+        <div class="district-pill reveal-up delay-4"><span class="dp-dot dp-moderate"></span>Malappuram</div>
+        <div class="district-pill reveal-up delay-4"><span class="dp-dot dp-moderate"></span>Alappuzha</div>
+        <div class="district-pill reveal-up delay-1"><span class="dp-dot dp-moderate"></span>Thiruvananthapuram</div>
+        <div class="district-pill reveal-up delay-2"><span class="dp-dot dp-moderate"></span>Kollam</div>
+        <div class="district-pill reveal-up delay-3"><span class="dp-dot dp-new"></span>Pathanamthitta</div>
+        <div class="district-pill reveal-up delay-3"><span class="dp-dot dp-new"></span>Idukki</div>
+        <div class="district-pill reveal-up delay-4"><span class="dp-dot dp-new"></span>Kasaragod</div>
+        <div class="district-pill reveal-up delay-4"><span class="dp-dot dp-new"></span>Wayanad</div>
+      </div>
+      <div class="district-legend reveal-up delay-2">
+        <span><span class="dp-dot dp-active"></span> Fully active</span>
+        <span><span class="dp-dot dp-moderate"></span> Growing</span>
+        <span><span class="dp-dot dp-new"></span> Launching soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MALAYALAM CTA ===================== -->
+  <section class="ml-cta-section">
+    <div class="ml-cta-inner">
+      <div class="ml-cta-text reveal-up">
+        <h2 class="ml-cta-heading">ഭക്ഷണം പങ്കുവെക്കൂ.<br/>Kerala-ൽ ഒരു മാറ്റം തുടങ്ങൂ.</h2>
+        <p class="ml-cta-en">Share food. Start a change in Kerala.</p>
+        <div class="ml-cta-btns">
+          <a href="#donate" class="btn-gold magnetic">ഇപ്പോൾ ഡൊണേറ്റ് ചെയ്യൂ · Donate Now</a>
+          <a href="#auth" class="btn-ghost-light">Join as an NGO Partner</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AUTH MODAL ===================== -->
+  <div class="modal-overlay" id="authOverlay" hidden>
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-tab="login">Sign In</button>
+        <button class="modal-tab" data-tab="register">Register</button>
+      </div>
+      <div class="modal-body" id="loginTab">
+        <h3>Welcome back</h3>
+        <p class="modal-sub">Manage your donations and impact</p>
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn-primary btn-full">Sign In</button>
+        </form>
+        <p class="modal-footer-text"><a href="#">Forgot password?</a></p>
+      </div>
+      <div class="modal-body" id="registerTab" hidden>
+        <h3>Join FoodBridge Kerala</h3>
+        <p class="modal-sub">Free account · No app download needed</p>
+        <form id="registerForm" novalidate>
+          <div class="form-group"><label for="regName">Full name</label><input type="text" id="regName" placeholder="Your name" required /></div>
+          <div class="form-group"><label for="regEmail">Email</label><input type="email" id="regEmail" placeholder="you@example.com" required /></div>
+          <div class="form-group"><label for="regPhone">Phone</label><input type="tel" id="regPhone" placeholder="+91 94470 00000" required /></div>
+          <div class="form-group">
+            <label for="regType">I am a</label>
+            <select id="regType" required>
+              <option value="">Select</option>
+              <option>Restaurant / Hotel</option>
+              <option>Individual / Family</option>
+              <option>Event / Wedding hall</option>
+              <option>College / Institution</option>
+              <option>NGO / Community kitchen</option>
+              <option>Volunteer</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="regDistrict">District</label>
+            <select id="regDistrict" required>
+              <option value="">Select district</option>
+              <option>Ernakulam</option><option>Thrissur</option><option>Kozhikode</option>
+              <option>Kannur</option><option>Kottayam</option><option>Palakkad</option>
+              <option>Malappuram</option><option>Alappuzha</option><option>Thiruvananthapuram</option>
+              <option>Kollam</option><option>Pathanamthitta</option><option>Idukki</option>
+              <option>Kasaragod</option><option>Wayanad</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="regPassword">Password</label><input type="password" id="regPassword" placeholder="At least 8 characters" required minlength="8" /></div>
+          <button type="submit" class="btn-primary btn-full">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-helpline">
+      <div class="container">
+        <p>🚨 <strong>Kerala Hunger Helpline: 1800-425-1550</strong> — Toll-free · 24 hours · 7 days</p>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="nav-logo">
+              <span class="logo-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="currentColor" opacity="0.12"/><path d="M7 14.5c1.2 2 3.2 3.5 5 3.5s3.8-1.5 5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg></span>
+              <span class="logo-wordmark">FoodBridge <em>Kerala</em></span>
+            </a>
+            <p class="footer-tagline">Turning Kerala's surplus food into someone's next meal — one district at a time.</p>
+            <p class="footer-ml">Kerala-ൽ ഭക്ഷണം പങ്കുവെക്കൂ.</p>
+          </div>
+          <div class="footer-col"><h5>Donate</h5><ul><li><a href="#donate">Post Surplus</a></li><li><a href="#rescue">How It Works</a></li><li><a href="#tonights">Tonight's Need</a></li><li><a href="#">Food Safety</a></li></ul></div>
+          <div class="footer-col"><h5>Partners</h5><ul><li><a href="#">Register NGO</a></li><li><a href="#">Volunteer Network</a></li><li><a href="#">Partner Dashboard</a></li><li><a href="#">Impact Reports</a></li></ul></div>
+          <div class="footer-col"><h5>About</h5><ul><li><a href="#">Our Mission</a></li><li><a href="#">The Team</a></li><li><a href="#">Press</a></li><li><a href="#">Contact</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2024 FoodBridge Kerala · Built with purpose in Kerala, India</p>
+          <p><a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
